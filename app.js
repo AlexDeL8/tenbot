@@ -23,12 +23,7 @@ tenBot.on('message', (channel, tags, message, self) => {
 	// Ignore echoed messages.
 	if(self) return;
 
-	if(message.substring(0,1)) {
-		tenBot.say(channel, `@${tags.username}, hey!`);
+	if(message.substring(0,1) === '!x') {
+		tenBot.say(channel, "Reply");
 	}
 });
-
-function commandHandler(command, profileDetails) {
-
-}
-
