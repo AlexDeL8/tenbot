@@ -1,5 +1,6 @@
 const tmi = require('tmi.js');
-const config = (require('../conf/config.js')).config;
+const config = (require('./config/config.js')).config;
+const xboxAchievementService = require('./services/xboxAchievementService.js');
 
 const tenBot = new tmi.Client({
 	options: { debug: config.debug },
@@ -26,3 +27,8 @@ tenBot.on('message', (channel, tags, message, self) => {
 		tenBot.say(channel, `@${tags.username}, hey!`);
 	}
 });
+
+function commandHandler(command, profileDetails) {
+
+}
+
