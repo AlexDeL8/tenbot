@@ -1,6 +1,5 @@
 const tmi = require('tmi.js');
 const config = (require('./config/config.js')).config;
-const xboxAchievementService = require('./services/xboxAchievementService.js');
 
 const tenBot = new tmi.Client({
 	options: { debug: config.debug },
@@ -18,12 +17,16 @@ const tenBot = new tmi.Client({
 //Connect to chat
 tenBot.connect();
 
+module.exports = {
+	tenBot: tenBot
+}
 
-tenBot.on('message', (channel, tags, message, self) => {
-	// Ignore echoed messages.
-	if(self) return;
 
-	if(message.substring(0,1) === '!x') {
-		tenBot.say(channel, "Reply");
-	}
-});
+// tenBot.on('message', (channel, tags, message, self) => {
+// 	// Ignore echoed messages.
+// 	if(self) return;
+
+// 	if(message.substring(0,1) === '!x') {
+// 		tenBot.say(channel, "Reply");
+// 	}
+// });

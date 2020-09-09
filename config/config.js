@@ -12,6 +12,11 @@ const config = {
     debug: true //recommended
 }
 
+const xboxApiConfig = {
+    xauth: "97f14e0ab4b66a6dc3781959e63809e5ef6934ba"
+}
+
 module.exports = {
-    config: config
+    config: config,
+    xboxApiConfig: xboxApiConfig
 };
