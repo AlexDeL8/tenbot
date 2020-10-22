@@ -13,7 +13,8 @@ const config = {
 }
 
 const xboxApiConfig = {
-    xauth: "97f14e0ab4b66a6dc3781959e63809e5ef6934ba"
+    xauth: "97f14e0ab4b66a6dc3781959e63809e5ef6934ba",
+    host: "https://xapi.us"///v2/"
 }
 
 module.exports = {
