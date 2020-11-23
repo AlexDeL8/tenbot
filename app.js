@@ -1,7 +1,11 @@
+"use strict";
+
+const http = require('http');
 const tmi = require('tmi.js');
+const xboxAchievementService = require('./services/xboxAchievementService.js');
+
 const config = (require('./config/config.js')).config;
 const xboxApiConfig = (require('./config/config.js')).xboxApiConfig;
-const http = require('http');
 
 const tenBot = new tmi.Client({
 	options: { debug: config.debug },
@@ -35,20 +39,11 @@ tenBot.on('message', (channel, tags, message, self) => {
 	// Ignore echoed messages.
 	if(self) return;
 
-	var replyMsg = '[Wh00ps, try again]';
+	var replyMessage = '[Wh00ps, something went wrong. Try again]';
 	if(message === '!gamerscore') {
-		tenBot.say(channel, replyMsg);
-	}
-	if(message === '!api') {
-		http.request(options, function(response){
-			var str = ''
-			response.on('data', function (chunk) {
-				str += chunk;
-			});
-		  
-			response.on('end', function () {
-				tenBot.say(str);
-			});
-		}).end();
+		let gamerscore = xboxAchievementService.getGamerscore().toString()
+		replyMessage = tags["display-name"]+" , Nax's current Gamerscore: "+gamerscore+"G"
+		
+		tenBot.say(channel, replyMessage)
 	}
 });
