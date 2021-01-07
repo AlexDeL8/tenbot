@@ -1,23 +1,23 @@
-"use strict";
+'use strict';
 
 const http = require('http');
 const tmi = require('tmi.js');
 const xboxAchievementService = require('./services/xboxAchievementService.js');
 
-const config = (require('./config/config.js')).config;
+const genConfig = (require('./config/config.js')).genConfig;
 const xboxApiConfig = (require('./config/config.js')).xboxApiConfig;
 
 const tenBot = new tmi.Client({
-	options: { debug: config.debug },
+	options: { debug: genConfig.debug },
 	connection: {
-		secure: config.secureConnection,
-		reconnect: config.reconnect
+		secure: genConfig.secureConnection,
+		reconnect: genConfig.reconnect
 	},
 	identity: {
-		username: config.bot_username,
-		password: config.bot_pass_oauth
+		username: genConfig.bot_username,
+		password: genConfig.bot_pass_oauth
 	},
-	channels: config.channels
+	channels: genConfig.channels
 });
 
 //Connect to chat
@@ -28,7 +28,7 @@ module.exports = {
 	tenBot: tenBot
 }
 
-let endPoint = "/v2/gamertag/2533274812783903"
+let endPoint = '/v2/gamertag/2533274812783903'
 var options = {
     url: xboxApiConfig.host,
     path: endPoint,
@@ -42,7 +42,7 @@ tenBot.on('message', (channel, tags, message, self) => {
 	var replyMessage = '[Wh00ps, something went wrong. Try again]';
 	if(message === '!gamerscore') {
 		let gamerscore = xboxAchievementService.getGamerscore().toString()
-		replyMessage = tags["display-name"]+" , Nax's current Gamerscore: "+gamerscore+"G"
+		replyMessage = tags['display-name']+' , Nax\'s current Gamerscore: '+gamerscore+'G'
 		
 		tenBot.say(channel, replyMessage)
 	}
