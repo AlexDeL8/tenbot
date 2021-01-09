@@ -1,5 +1,6 @@
 'use strict';
 
+const fetch = require('node-fetch');
 const http = require('http');
 const tmi = require('tmi.js');
 
@@ -15,12 +16,10 @@ let getGamerscore = function() {
             'Content-Type': 'application/json',
             '-X': xboxApiConfig.xauth,
         }
-    }).then(result => {
-        console.log('SUCCESS');
-        console.log(result);
-    }).catch(err => {
-        console.log(err);
     })
+    .then(result => result.json())
+    .then(jsonRes => console.log(jsonRes))
+    .catch(err => console.log(err))
     
     return 100000
 }

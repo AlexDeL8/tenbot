@@ -19,6 +19,6 @@ const xboxApiConfig = {
 }
 
 module.exports = {
-    config: config,
+    genConfig: genConfig,
     xboxApiConfig: xboxApiConfig
 };
