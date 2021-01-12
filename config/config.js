@@ -13,9 +13,9 @@ const genConfig = {
 }
 
 const xboxApiConfig = {
-    xauth: '39018870991a6f1f2c6f531a7446b53c4b72d9b7',
+    xauth: 'ea31a2db4b3917b550785877ed4cffa59070363d',
     basePath: 'https://xapi.us/v2',
-    profileId: '2533274812783903'
+    xuid: '2533274812783903'
 }
 
 module.exports = {

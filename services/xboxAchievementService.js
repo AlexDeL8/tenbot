@@ -10,11 +10,11 @@ const xboxApiConfig = (require('../config/config.js')).xboxApiConfig;
 
 //Use fetch()
 let getGamerscore = function() {
-    fetch(xboxApiConfig.basePath+'/profile', {
-        method: 'POST',
+    fetch(xboxApiConfig.basePath+xboxApiConfig.xuid+'/new-profile', {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            '-X': xboxApiConfig.xauth,
+            'X-AUTH': xboxApiConfig.xauth,
         }
     })
     .then(result => result.json())
