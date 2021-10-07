@@ -1,12 +1,12 @@
 const genConfig = {
     bot_username: 'TENBot_sl',
-    //bot_username: 'ENTER_BOT_USERNAME_HERE',
+    //bot_username: 'BOT_USERNAME',
     bot_pass_oauth: 'oauth:56y8uzaaa7yyff7jsqo1e2lxsqqord',
-    //bot_pass_oauth: 'ENTER_BOT_OAUTH_TOKEN_HERE',
+    //bot_pass_oauth: 'BOT_OAUTH_TOKEN',
     channels: ['#theelitenax'],
-    //channels: ['#ENTER_YOUR_TWITCH_USERNAME_HERE_lowercase'],
+    //channels: ['#TWITCH_USERNAME_lowercase'],
     gamertag: 'The Elite Nax',
-    //gamertag: 'ENTER_GAMERTAG_HERE',
+    //gamertag: 'GAMERTAG',
     secureConnection: true, //recommended
     reconnect: true, //recommended
     debug: true //recommended
