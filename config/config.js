@@ -1,4 +1,4 @@
-const genConfig = {
+const botConfig = {
     bot_username: 'TENBot_sl',
     //bot_username: 'BOT_USERNAME',
     bot_pass_oauth: 'oauth:56y8uzaaa7yyff7jsqo1e2lxsqqord',
@@ -19,6 +19,6 @@ const xboxApiConfig = {
 }
 
 module.exports = {
-    genConfig: genConfig,
+    botConfig: botConfig,
     xboxApiConfig: xboxApiConfig
 };
