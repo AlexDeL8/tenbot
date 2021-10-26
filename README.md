@@ -1,2 +1,6 @@
-# tenbot
-Twitch irc bot with general functionality and integration with X API for stats on Xbox Live achievements for a specific gamertag
+# TENbot
+Twitch IRC bot with: 
+-General chat functionality 
+-Integration with X API (*for retrieving Xbox Live achievement stats for a specific gamertag*S)
+
+See [TENbot Github Page](https://alexdel8.github.io/tenbot/) for more information
