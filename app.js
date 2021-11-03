@@ -2,8 +2,8 @@
 
 const tenBot = require('./loaders/tenbotLoader.js').tenBot
 //Bring in common/shared emitter
-const emitter = require('./emitter');
-const commonEmitter = emitter.commonEmitter;
+require('./emitter.js');
+// const commonEmitter = emitter.commonEmitter;
 
 //Bot connects to chat using config properties
 tenBot.connect();

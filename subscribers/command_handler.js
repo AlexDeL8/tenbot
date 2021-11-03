@@ -1,8 +1,9 @@
 'use strict'
 
 const tenBot = require('./loaders/tenbotLoader.js').tenBot;
-const emitter = require('../emitter');
-const commonEmitter = emitter.commonEmitter;
+const emitter = require('../emitter.js');
+
+// const commonEmitter = emitter.commonEmitter;
 
 commonEmitter.on('commandSent', (commandString, replyMessage) => {
     console.log('in COMMAND_HANDLER.JS')
