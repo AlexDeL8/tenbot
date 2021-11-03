@@ -16,6 +16,4 @@ const tenBot = new tmi.Client({
 	channels: botConfig.channels
 });
 
-module.exports = {
-    tenBot: tenBot
-}
+module.exports = { tenBot: tenBot }
