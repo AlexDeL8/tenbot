@@ -1,5 +1,5 @@
 'use strict'
-
+//https://medium.com/developers-arena/nodejs-event-emitters-for-beginners-and-for-experts-591e3368fdd2
 var tenBot = require('./loaders/tenbotLoader.js').tenBot;
 // const emitter = require('../emitter.js');
 // const commonEmitter = emitter.commonEmitter;
