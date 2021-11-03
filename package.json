@@ -17,9 +17,10 @@
   },
   "homepage": "https://github.com/AlexDeL8/tenbot#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "request": "^2.88.2",
-    "tmi.js": "^1.5.0"
+    "tmi.js": "^1.8.5"
   },
   "devDependencies": {
     "jest": "^26.6.3"

@@ -1,2 +1,3 @@
 var events = require('events');
-global.commonEmitter = new events();
+var em = new events.EventEmitter();
+module.exports.commonEmitter = em;
