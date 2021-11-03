@@ -1,10 +1,13 @@
 'use strict'
 
-const tenBot = require('./loaders/tenbotLoader.js').tenBot;
-const emitter = require('../emitter');
-const commonEmitter = emitter.commonEmitter;
+var tenBot = require('./loaders/tenbotLoader.js').tenBot;
+// const emitter = require('../emitter.js');
+// const commonEmitter = emitter.commonEmitter;
+var app = require('../app.js');
+var commonEmitter = app.commonEmitter;
 
-commonEmitter.on('commandSent', (commandString, replyMessage) => {
+//Subscribe to '!command'
+commonEmitter.on('commandSent', function(commandString, replyMessage) {
     console.log('in COMMAND_HANDLER.JS')
     
     if(commandString === 'gamerscore') {
