@@ -1,12 +1,18 @@
 'use strict';
 
+import express from 'express';
+import { EventEmitter } from 'events';
+
 const tenBot = require('./loaders/tenbotLoader.js').tenBot
-//Bring in common/shared emitter
-var events = require('events');
-var commonEmitter = new events.EventEmitter();
+// Instantiate emitter instance
+const commonEmitter = new EventEmitter();
+// Add emitter to app using express
+const app = express();
+app.set('commonEmitter', commonEmitter);
 
 //Bot connects to chat using config properties
 tenBot.connect();
+app.set('tenBot', tenBot);
 
 tenBot.on('message', (channel, tags, message, self) => {
 	// Ignore echoed messages.
