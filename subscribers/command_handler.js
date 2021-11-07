@@ -1,9 +1,10 @@
 'use strict'
 
 //using express figure out how to express.get() tenBot AND commonEmitter
+import { app } from '../app.js';
 
-const tenBot = req.tenBot
-const commonEmitter = req.commonEmitter
+const tenBot = app.get('tenBot')
+const commonEmitter = app.get('commonEmitter')
 
 //Subscribe to '!command'
 commonEmitter.on('commandSent', function(commandString, replyMessage) {

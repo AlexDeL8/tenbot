@@ -1,7 +1,7 @@
-const tmi = require('tmi.js');
+const tmi = require('tmi.cjs');
 
-const botConfig = (require('../config/config.js')).botConfig;
-const xboxApiConfig = (require('../config/config.js')).xboxApiConfig;
+import { botConfig } from '../config/config.js';
+import { xboxApiConfig } from '../config/config.js';
 
 const tenBot = new tmi.Client({
 	options: { debug: botConfig.debug },
@@ -16,4 +16,4 @@ const tenBot = new tmi.Client({
 	channels: botConfig.channels
 });
 
-module.exports = { tenBot: tenBot }
+export { tenBot }

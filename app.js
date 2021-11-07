@@ -2,8 +2,8 @@
 
 import express from 'express';
 import { EventEmitter } from 'events';
+import { tenBot } from './loaders/tenbotLoader.js';
 
-const tenBot = require('./loaders/tenbotLoader.js').tenBot
 // Instantiate emitter instance
 const commonEmitter = new EventEmitter();
 // Add emitter to app using express
@@ -30,5 +30,5 @@ tenBot.on('message', (channel, tags, message, self) => {
 
 module.exports = { 
 	tenBot: tenBot,
-	commonEmitter: commonEmitter
+	app: app
 }

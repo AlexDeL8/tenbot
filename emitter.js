@@ -1,3 +1,3 @@
-var events = require('events');
-var em = new events.EventEmitter();
-module.exports.commonEmitter = em;
+// var events = require('events');
+// var em = new events.EventEmitter();
+// module.exports.commonEmitter = em;

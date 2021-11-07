@@ -18,7 +18,4 @@ const xboxApiConfig = {
     xuid: '2533274812783903'
 }
 
-module.exports = {
-    botConfig: botConfig,
-    xboxApiConfig: xboxApiConfig
-};
+export { botConfig, xboxApiConfig };
