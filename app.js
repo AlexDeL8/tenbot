@@ -28,7 +28,4 @@ tenBot.on('message', (channel, tags, message, self) => {
 	commonEmitter.emit('commandSent', commandString, replyMessage);
 });
 
-module.exports = { 
-	tenBot: tenBot,
-	app: app
-}
+export { tenBot, app }

@@ -1,4 +1,5 @@
-const tmi = require('tmi.cjs');
+import tmi from 'tmi.js';
+const { botTmi } = tmi; 
 
 import { botConfig } from '../config/config.js';
 import { xboxApiConfig } from '../config/config.js';
