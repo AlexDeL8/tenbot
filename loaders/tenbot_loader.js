@@ -1,8 +1,9 @@
+'use strict'
+
 import tmi from 'tmi.js';
-const { botTmi } = tmi; 
 
 import { botConfig } from '../config/config.js';
-import { xboxApiConfig } from '../config/config.js';
+import { xboxApiConfig } from '../config/config.js'; //To be used later
 
 const tenBot = new tmi.Client({
 	options: { debug: botConfig.debug },
