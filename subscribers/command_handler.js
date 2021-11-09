@@ -1,14 +1,13 @@
 'use strict'
 
-//using express figure out how to express.get() tenBot AND commonEmitter
-import { tenBot, /*app,*/ commonEmitter } from '../app.js';
+import { tenBot } from '../app.js';
+import { commonEmitter } from '../common_emitter.js'
 
-// const emitter = commonEmitter;
 console.log('INSIDE HANDLER FILE')
 console.log(commonEmitter);
 
 //Subscribe to '!command'
-emitter.on('commandSent', function(commandString, replyMessage) {
+commonEmitter.on('commandSent', function(commandString, replyMessage) {
     console.log('in COMMAND_HANDLER.JS')
     
     if(commandString === 'gamerscore') {

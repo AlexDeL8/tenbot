@@ -8,9 +8,8 @@ class CommonEmitter extends EventEmitter {
         if(CommonEmitter.instance === null) {
             CommonEmitter.instance = this;
         }
-        this.emit('start', () => {
-            console.log('commonEmitter: Started...')
-        });
+        this.emit('start');
+        //TODO: Might need to put .on('start, () => {...}) log here
         return CommonEmitter.instance;
     }
 
@@ -18,3 +17,6 @@ class CommonEmitter extends EventEmitter {
         this.emit(customEventName, eventArgs)
     }
 }
+
+const commonEmitter = new CommonEmitter();
+export { commonEmitter };
