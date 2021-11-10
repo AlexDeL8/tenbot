@@ -1,26 +1,22 @@
 'use strict'
 
-import { tenBot } from './config/config.js';
+import { tenBotClient } from './config/config.js';
 import tmi from 'tmi.js'; 
 
 class TenBot extends tmi {
     constructor() {
         super();
         if(TenBot.instance === null) {
-            TenBot.connect();
+            TenBot.client = tenBotClient.connect();
             TenBot.instance = this;
         }
         return TenBot.instance;
     }
 
     sendMessage(chatMessage, channel = '#theelitenax') {
-        return '';
-    }
-
-    snedEmit(eventName, ...args) {
-        return ''
+        this.client.say(channel, chatMessage);
     }
 }
 
-const tenBot= new TenBot();
+const tenBot = new TenBot();
 export { tenBot };

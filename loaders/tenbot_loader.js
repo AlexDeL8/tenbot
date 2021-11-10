@@ -4,7 +4,7 @@ import tmi from 'tmi.js';
 
 import { botConfig, xboxApiConfig } from '../config/config.js'; //xboxApiConfig to be used later
 
-const tenBot = new tmi.Client({
+const tenBotClient = new tmi.Client({
 	options: { debug: botConfig.debug },
 	connection: {
 		secure: botConfig.secureConnection,
@@ -17,4 +17,4 @@ const tenBot = new tmi.Client({
 	channels: botConfig.channels
 });
 
-export { tenBot }
+export { tenBotClient }

@@ -2,14 +2,13 @@
 
 // import express from 'express';
 import { commonEmitter } from './common_emitter.js';
-import { tenBot } from './loaders/tenbot_loader.js';
+import { tenBot } from './tenbot.js';
 import './subscribers/command_handler.js'
 
 // Instantiate emitter instance
 const commonEmitter = new CommonEmitter();
 //Bot connects to chat using config properties
 tenBot.connect();
-//TODO: Should tenBot become a singleton class to be shared/passed around?
 
 console.log(commonEmitter);
 commonEmitter.on('start', () => {
@@ -27,5 +26,3 @@ tenBot.on('message', (channel, tags, message, self) => {
 	commonEmitter.emit('commandSent', commandString, replyMessage);
 	console.log(commonEmitter);
 });
-
-export { tenBot }
