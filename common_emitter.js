@@ -9,7 +9,6 @@ class CommonEmitter extends EventEmitter {
             CommonEmitter.instance = this;
         }
         this.emit('start');
-        //TODO: Might need to put .on('start, () => {...}) log here
         return CommonEmitter.instance;
     }
 

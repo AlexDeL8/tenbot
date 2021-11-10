@@ -2,8 +2,7 @@
 
 import tmi from 'tmi.js';
 
-import { botConfig } from '../config/config.js';
-import { xboxApiConfig } from '../config/config.js'; //To be used later
+import { botConfig, xboxApiConfig } from '../config/config.js'; //xboxApiConfig to be used later
 
 const tenBot = new tmi.Client({
 	options: { debug: botConfig.debug },
