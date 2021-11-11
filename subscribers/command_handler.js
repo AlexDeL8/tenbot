@@ -1,14 +1,13 @@
 'use strict'
 
-import { tenBot } from '../app.js';
+import { tenBot } from '../tenbot.js';
 import { commonEmitter } from '../common_emitter.js'
 
-console.log('INSIDE HANDLER FILE')
-console.log(commonEmitter);
+console.log('\nINSIDE HANDLER FILE\n')
 
 //Subscribe to '!command'
 commonEmitter.on('commandSent', function(commandString, replyMessage) {
-    console.log('in COMMAND_HANDLER.JS')
+    console.log('in COMMON_EMITTER ON()')
     
 	switch(commandString) {
 		case 'gamerscore':

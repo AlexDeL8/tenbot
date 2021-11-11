@@ -1,11 +1,9 @@
 'use strict'
 
-import { tenBotClient } from './config/config.js';
-import tmi from 'tmi.js'; 
+import { tenBotClient } from './loaders/tenbot_loader.js';
 
-class TenBot extends tmi {
+class TenBot {
     constructor() {
-        super();
         if(TenBot.instance === null) {
             TenBot.client = tenBotClient.connect();
             TenBot.instance = this;
@@ -19,4 +17,6 @@ class TenBot extends tmi {
 }
 
 const tenBot = new TenBot();
+console.log('IN TENBOT.JS')
+console.log(tenBot);
 export { tenBot };

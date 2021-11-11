@@ -1,22 +1,24 @@
 'use strict';
 
 // import express from 'express';
-import { commonEmitter } from './common_emitter.js';
-import { tenBot } from './tenbot.js';
+import { commonEmitter as cm } from './common_emitter.js';
+import { tenBot as bot } from './tenbot.js';
 import './subscribers/command_handler.js'
 
 // Instantiate emitter instance
-const commonEmitter = new CommonEmitter();
+const commonEmitter = cm;
 //Bot connects to chat using config properties
-tenBot.connect();
+const tenBot = bot;
 
-console.log(commonEmitter);
+console.log(tenBot);
+console.log('\n')
+
 commonEmitter.on('start', () => {
 	console.log('commonEmitter: STARTED')
 });
 
 tenBot.on('message', (channel, tags, message, self) => {
-	// Ignore echoed messages.
+	// Ignore self messages or non-'!' messages
 	if(self || message[0] !== '!') return;
 	
 	let commandString = message.substr(1);
