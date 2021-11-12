@@ -3,10 +3,6 @@
 import { tenBot } from '../tenbot.js';
 import { commonEmitter } from '../common_emitter.js'
 
-console.log('\nINSIDE HANDLER FILE');
-console.log(tenBot);
-console.log(commonEmitter)
-
 //Subscribe to '!command'
 commonEmitter.on('commandSent', function(commandString, replyMessage) {
     console.log('in COMMON_EMITTER ON()')

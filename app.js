@@ -11,7 +11,7 @@ import './subscribers/command_handler.js'
 // const tenBot = bot;
 
 console.log('\nINSIDE APP');
-console.log(tenBot);
+console.log(tenBot.client);
 
 commonEmitter.on('start', () => {
 	console.log('commonEmitter: STARTED')
