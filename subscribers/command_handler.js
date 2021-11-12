@@ -10,7 +10,7 @@ commonEmitter.on('commandSent', function(commandString, replyMessage) {
 	switch(commandString) {
 		case 'gamerscore':
 			let gamerscore = 100;
-			replyMessage = `${tags['display-name']} , Nax\'s current Gamerscore: ${gamerscore}G`;
+			let replyMessage = `${tags['display-name']} , Nax\'s current Gamerscore: ${gamerscore}G`;
 
 			tenBot.say(channel, replyMessage);
 			break;

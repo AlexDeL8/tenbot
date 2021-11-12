@@ -6,9 +6,8 @@ class TenBot {
     constructor() {
         if(TenBot.instance instanceof TenBot) {
             TenBot.instance = this;
-            console.log(tenBotClient)
-            this.client = tenBotClient;
         }
+        TenBot.instance = tenBotClient;
         return TenBot.instance;
     }
 
@@ -18,8 +17,4 @@ class TenBot {
 }
 
 const tenBot = new TenBot();
-
-console.log('IN TENBOT.JS');
-console.log(tenBot.client);
-
 export { tenBot };

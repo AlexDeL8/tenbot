@@ -12,8 +12,8 @@ class CommonEmitter extends EventEmitter {
         return CommonEmitter.instance;
     }
 
-    emitEvent(customEventName, eventArgs) {
-        this.emit(customEventName, eventArgs);
+    emitEvent(customEventName, eventArgs = []) {
+        this.emit(customEventName, ...eventArgs);
     }
 }
 

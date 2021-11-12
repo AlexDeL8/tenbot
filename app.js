@@ -3,18 +3,15 @@
 // import express from 'express';
 import { commonEmitter } from './common_emitter.js';
 import { tenBot } from './tenbot.js';
-import './subscribers/command_handler.js'
-
-// Instantiate emitter instance
-// const commonEmitter = cm;
-//Bot connects to chat using config properties
-// const tenBot = bot;
+import './subscribers/command_handler.js';
+import 'tmi.js';
 
 console.log('\nINSIDE APP');
-console.log(tenBot.client);
+// console.log(tenBot);
+tenBot.connect();
 
 commonEmitter.on('start', () => {
-	console.log('commonEmitter: STARTED')
+	console.log('commonEmitter: STARTED');
 });
 
 tenBot.on('message', (channel, tags, message, self) => {
