@@ -1,17 +1,17 @@
 'use strict';
 
 // import express from 'express';
-import { commonEmitter as cm } from './common_emitter.js';
-import { tenBot as bot } from './tenbot.js';
+import { commonEmitter } from './common_emitter.js';
+import { tenBot } from './tenbot.js';
 import './subscribers/command_handler.js'
 
 // Instantiate emitter instance
-const commonEmitter = cm;
+// const commonEmitter = cm;
 //Bot connects to chat using config properties
-const tenBot = bot;
+// const tenBot = bot;
 
+console.log('\nINSIDE APP');
 console.log(tenBot);
-console.log('\n')
 
 commonEmitter.on('start', () => {
 	console.log('commonEmitter: STARTED')

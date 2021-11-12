@@ -1,11 +1,9 @@
 'use strict'
 
 import { tenBotClient } from './loaders/tenbot_loader.js';
-
 class TenBot {
     constructor() {
-        if(TenBot.instance === null) {
-            TenBot.client = tenBotClient.connect();
+        if(TenBot.instance instanceof TenBot) {
             TenBot.instance = this;
         }
         return TenBot.instance;
@@ -17,6 +15,8 @@ class TenBot {
 }
 
 const tenBot = new TenBot();
-console.log('IN TENBOT.JS')
+
+console.log('IN TENBOT.JS');
 console.log(tenBot);
+
 export { tenBot };

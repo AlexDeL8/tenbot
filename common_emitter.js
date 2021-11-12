@@ -5,7 +5,7 @@ import { EventEmitter } from 'events';
 class CommonEmitter extends EventEmitter {
     constructor() {
         super();
-        if(CommonEmitter.instance === null) {
+        if(CommonEmitter.instance instanceof CommonEmitter) {
             CommonEmitter.instance = this;
         }
         this.emit('start');
@@ -13,7 +13,7 @@ class CommonEmitter extends EventEmitter {
     }
 
     emitEvent(customEventName, eventArgs) {
-        this.emit(customEventName, eventArgs)
+        this.emit(customEventName, eventArgs);
     }
 }
 
