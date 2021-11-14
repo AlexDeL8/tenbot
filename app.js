@@ -6,8 +6,6 @@ import { tenBot } from './tenbot.js';
 import './subscribers/command_handler.js';
 import 'tmi.js';
 
-console.log('\nINSIDE APP');
-// console.log(tenBot);
 tenBot.connect();
 
 commonEmitter.on('start', () => {
@@ -21,7 +19,5 @@ tenBot.on('message', (channel, tags, message, self) => {
 	let commandString = message.substr(1);
 	let replyMessage = '[oop, something went wrong. Try again]';
 
-	console.log('in APP.JS');
-	commonEmitter.emit('commandSent', commandString, replyMessage);
-	console.log(commonEmitter);
+	commonEmitter.emit('commandSent', commandString, replyMessage, channel, tags);
 });

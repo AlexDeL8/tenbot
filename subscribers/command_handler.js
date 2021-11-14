@@ -4,17 +4,18 @@ import { tenBot } from '../tenbot.js';
 import { commonEmitter } from '../common_emitter.js'
 
 //Subscribe to '!command'
-commonEmitter.on('commandSent', function(commandString, replyMessage) {
-    console.log('in COMMON_EMITTER ON()')
-    
+commonEmitter.on('commandSent', function(commandString, replyMessage, channel, tags) {
 	switch(commandString) {
 		case 'gamerscore':
 			let gamerscore = 100;
-			let replyMessage = `${tags['display-name']} , Nax\'s current Gamerscore: ${gamerscore}G`;
-
-			tenBot.say(channel, replyMessage);
+			replyMessage = `@${tags['display-name']} , Nax\'s current Gamerscore: ${gamerscore}G`;
+			
 			break;
-		default:
-			tenBot.say(channel, replyMessage);
+		case 'totalGames':
+			let totalGames = 8;
+			replyMessage = `@${tags['display-name']} , Nax\'s total games: ${totalGames}`;
+
+			break
 	}
+	tenBot.say(channel, replyMessage);
 });
