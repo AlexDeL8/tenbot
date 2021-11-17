@@ -1,27 +1,30 @@
 'use strict';
 
-const fetch = require('node-fetch');
-const http = require('http');
-const tmi = require('tmi.js');
+class XboxAchievementService {
+    constructor() {
+        console.log('XboxAchievementService CREATED');
+        //TODO: Retrieve XUID from XAPI
+        console.log('XUID retrieved!');
+        this.xuid = 0;
+    }
 
-const tenBot = (require('../app.js')).tenBot;
-const genConfig = require('../config/config.js').config;
-const xboxApiConfig = (require('../config/config.js')).xboxApiConfig;
+    getGamerscore() {
 
-//Use fetch()
-let getGamerscore = function() {
-    fetch(xboxApiConfig.basePath+'/'+xboxApiConfig.xuid+'/new-profile', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-AUTH': xboxApiConfig.xauth,
-        }
-    })
-    .then(result => result.json())
-    .then(jsonRes => jsonRes['gamerScore'])
-    .catch(err => console.log(err))
+    }
+
+    //Private
+    _getXOneGames() {
+
+    }
+
+    //Private
+    _get360Games() {
+
+    }
+
+    getTotalGames() {
+
+    }
 }
 
-module.exports = {
-    getGamerscore: getGamerscore
-}
+export { XboxAchievementService };

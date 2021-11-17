@@ -1,7 +1,10 @@
 'use strict'
 
 import { tenBot } from '../tenbot.js';
-import { commonEmitter } from '../common_emitter.js'
+import { commonEmitter } from '../common_emitter.js';
+import { XboxAchievementService } from '../services/xbox_achievement_service.js';
+
+const xboxAchievementService = new XboxAchievementService();
 
 //Subscribe to '!command'
 commonEmitter.on('commandSent', function(commandString, replyMessage, channel, tags) {
@@ -17,5 +20,5 @@ commonEmitter.on('commandSent', function(commandString, replyMessage, channel, t
 
 			break
 	}
-	tenBot.say(channel, replyMessage);
+	tenBot.sendMessage(replyMessage, channel);
 });
