@@ -1,44 +1,48 @@
 'use strict';
 
 import { xboxApiConfig } from '../config/config.js'
+import fetch from 'node-fetch';
 
 class XboxAchievementService {
     constructor() {
-        console.log('XboxAchievementService CREATED');
-        
-        let profileInfoForXuidValue = async function() {
-                await fetch(`${xboxApiConfig.basePath}${xboxApiConfig.xuid}/new-profile`, {
-                    method: 'GET',
-                    headers: {
-                        'X-AUTH': xboxApiConfig.apiKey,
-                        'Content-Type': 'application/json'
-                    }
-                })
-            }();
-        let profileInfoForXuidJson = async function() { 
-            await profileInfoForXuidValue.json(); 
-        }();
-
-        console.log(profileInfoForXuidJson);
-        this.gamerscore = profileInfoForXuidJson.gamerScore;
+        this.gamerscore = '';
     }
 
-    getGamerscore() {
-        return this.gamerscore;
+    async getGamerscore() {
+        if(this.gamerscore !== '') {
+            return this.gamerscore;
+        } else {
+            let profileInfoForXuidValue = await fetch(`${xboxApiConfig.basePath}${xboxApiConfig.xuid}/new-profile`, {
+                method: 'GET',
+                headers: {
+                    'X-AUTH': xboxApiConfig.apiKey,
+                    'Content-Type': 'application/json'
+                }
+            });
+            
+            let profileInfoForXuidJson = await profileInfoForXuidValue.json();
+            this.gamerscore = profileInfoForXuidJson.gamerScore;
+            return this.gamerscore;
+        }
+    }
+
+    getTotalGames() {
+        return '';
+    }
+
+    //Private
+    _formatNumber() {
+        return '';
     }
 
     //Private
     _getXOneGames() {
-        return ''
+        return '';
     }
 
     //Private
     _get360Games() {
-        return ''
-    }
-
-    getTotalGames() {
-        return ''
+        return '';
     }
 }
 
