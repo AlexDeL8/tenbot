@@ -10,7 +10,7 @@ const xboxAchievementService = new XboxAchievementService();
 commonEmitter.on('commandSent', function(commandString, replyMessage, channel, tags) {
 	switch(commandString) {
 		case 'gamerscore':
-			let gamerscore = 100;
+			let gamerscore = xboxAchievementService.getGamerscore();
 			replyMessage = `@${tags['display-name']} , Nax\'s current Gamerscore: ${gamerscore}G`;
 			
 			break;
@@ -20,5 +20,5 @@ commonEmitter.on('commandSent', function(commandString, replyMessage, channel, t
 
 			break
 	}
-	tenBot.sendMessage(replyMessage, channel);
+	tenBot.say(channel, replyMessage);
 });

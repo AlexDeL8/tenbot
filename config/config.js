@@ -13,8 +13,9 @@ const botConfig = {
 }
 
 const xboxApiConfig = {
+    apiKey: '3c934b3e92ec8465bdfb425eb71e68be88f9efc4',
     xauth: 'ea31a2db4b3917b550785877ed4cffa59070363d',
-    basePath: 'https://xapi.us/v2',
+    basePath: 'https://xapi.us/v2/',
     xuid: '2533274812783903'
 }
 

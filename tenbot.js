@@ -10,10 +10,6 @@ class TenBot {
         TenBot.instance = tenBotClient;
         return TenBot.instance;
     }
-
-    sendMessage(chatMessage, channel = '#theelitenax') {
-        this.say(channel, chatMessage);
-    }
 }
 
 const tenBot = new TenBot();
