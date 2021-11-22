@@ -21,7 +21,7 @@ class XboxAchievementService {
             });
             
             let profileInfoForXuidJson = await profileInfoForXuidValue.json();
-            this.gamerscore = profileInfoForXuidJson.gamerScore;
+            this.gamerscore = this._formatNumber(profileInfoForXuidJson.gamerScore);
             return this.gamerscore;
         }
     }
@@ -31,8 +31,8 @@ class XboxAchievementService {
     }
 
     //Private
-    _formatNumber() {
-        return '';
+    _formatNumber(numberToFormat) {
+        return numberToFormat.toLocaleString('en-US');
     }
 
     //Private
