@@ -13,12 +13,12 @@
 
 ## General Information
 - Twitch IRC bot with: 
-    - General chat functionality 
-    - Integration with X API (*for retrieving Xbox Live achievement stats for a specific gamertag*S)
+    - General chat commands with sinlge responses
+    - Integration with [X API](https://xapi.us/) (*for retrieving Xbox Live achievement stats for a specific gamertag*S)
 - See [TENbot Github Page](https://alexdel8.github.io/tenbot/) for more information
 
 ## Technologies Used
-
+- Node.js, Express
 
 ## Features
 
@@ -30,7 +30,8 @@
 
 
 ## Acknowledgements
-- 
+- [X API](https://xapi.us/) was a huge part and influence to make this bot possible
+- [tmi.js](https://tmijs.com/) for making it simple to setup/configure bots and incorperate interaction/responses with various Twitch chat events
 
 ## Contact
 Created by Alex De Luca - [@AlexDeL8](https://github.com/AlexDeL8). Feel free to [contact me](mailto:alexnaj88@gmail.com)📧
