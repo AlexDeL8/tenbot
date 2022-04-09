@@ -1,6 +1,6 @@
 # TENbot
 ## Twitch IRC chatbot
-![TENBot Logo Image](/../misc/TENBot.jpg)
+![TENBot Logo Image](/misc/TENBot.jpg)
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
