@@ -1,7 +1,7 @@
 const botConfig = {
     bot_username: "TENBot_sl",
     //bot_username: 'BOT_USERNAME',
-    bot_pass_oauth: process.env.BOT_OAUTH, //!
+    bot_pass_oauth: process.env.BOT_OAUTH,
     //bot_pass_oauth: 'BOT_OAUTH_TOKEN',
     channels: ["#theelitenax"],
     //channels: ['#TWITCH_USERNAME_lowercase'],
