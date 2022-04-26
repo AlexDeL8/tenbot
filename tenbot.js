@@ -1,10 +1,10 @@
-'use strict'
+"use strict";
 
-import { tenBotClient } from './loaders/tenbot_loader.js';
+import { tenBotClient } from "./loaders/tenbot_loader.js";
 
 class TenBot {
     constructor() {
-        if(TenBot.instance instanceof TenBot) {
+        if (TenBot.instance instanceof TenBot) {
             TenBot.instance = this;
         }
         TenBot.instance = tenBotClient;

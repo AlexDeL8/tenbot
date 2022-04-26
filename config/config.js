@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+const configEnvironmentVariables = dotenv.config();
+
 const botConfig = {
     bot_username: "TENBot_sl",
     //bot_username: 'BOT_USERNAME',
