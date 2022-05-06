@@ -9,13 +9,19 @@ const xboxAchievementService = new XboxAchievementService();
 //Subscribe to '!command'
 commonEmitter.on(
     "commandSent",
-    function (commandString, replyMessage, channel, tags) {
+    (commandString, replyMessage, channel, chatterTags) => {
         switch (commandString) {
+            case "botOff":
+                if (chatterTags.badges.hasOwnProperty("broadcaster")) {
+                    console.warn("****bofOff RECIEVED**** - Shutting down...");
+                    process.exit(1);
+                }
+                break;
             case "gamerscore":
                 xboxAchievementService
                     .getGamerscore()
                     .then((returnedGamerscore) => {
-                        replyMessage = `@${tags["display-name"]} , Nax\'s current Gamerscore: ${returnedGamerscore}G`;
+                        replyMessage = `@${chatterTags["display-name"]} , Nax\'s current Gamerscore: ${returnedGamerscore}G`;
                         tenBot.say(channel, replyMessage);
                     })
                     .catch((err) =>
@@ -27,7 +33,7 @@ commonEmitter.on(
                 xboxAchievementService
                     .getCurrentGame()
                     .then((returnedCurrentGame) => {
-                        replyMessage = `@${tags["display-name"]} , ${returnedCurrentGame.title} current stats: ${returnedCurrentGame.gamerscore}G -- ${returnedCurrentGame.achievements} achievements won -- ${returnedCurrentGame.completionPercent}% complete! PogChamp`;
+                        replyMessage = `@${chatterTags["display-name"]} , ${returnedCurrentGame.title} current stats: ${returnedCurrentGame.gamerscore}G -- ${returnedCurrentGame.achievements} achievements won -- ${returnedCurrentGame.completionPercent}% complete! PogChamp`;
                         tenBot.say(channel, replyMessage);
                     })
                     .catch((err) =>
