@@ -5,7 +5,7 @@ import { commonEmitter } from './common_emitter.js';
 import { tenBot } from './tenbot.js';
 import './subscribers/command_handler.js';
 import 'tmi.js';
-
+//TEST
 tenBot.connect();
 
 commonEmitter.on('start', () => {
