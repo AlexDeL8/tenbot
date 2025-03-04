@@ -1,16 +1,13 @@
 'use strict';
 
-const fetch = require('node-fetch');
-const http = require('http');
 const tmi = require('tmi.js');
 
-const tenBot = (require('../app.js')).tenBot;
-const genConfig = require('../config/config.js').config;
-const xboxApiConfig = (require('../config/config.js')).xboxApiConfig;
+import { tenBot } from '../app.js';
+import { genConfig, xboxApiConfig } from '../config/config.js';
 
 //Use fetch()
-let getGamerscore = function() {
-    fetch(xboxApiConfig.basePath+xboxApiConfig.xuid+'/new-profile', {
+export const getGamerscore = async function() {
+    fetch(xboxApiConfig.basePath+'/'+xboxApiConfig.xuid+'/new-profile', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -18,12 +15,6 @@ let getGamerscore = function() {
         }
     })
     .then(result => result.json())
-    .then(jsonRes => console.log(jsonRes))
+    .then(jsonRes => jsonRes['gamerScore'])
     .catch(err => console.log(err))
-    
-    return 100000
-}
-
-module.exports = {
-    getGamerscore: getGamerscore
 }
